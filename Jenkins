@@ -1,0 +1,16 @@
+pipeline {
+	agent any
+	stages {
+		stage ("1. Installing httpd ") {
+			steps {
+				sh "sudo yum install httpd -y"
+			}
+		}
+		stage ("2. Copying the file") {
+			steps {
+			
+				sh "sudo cp /home/ec2-user/index.html /var/www/html"
+			}
+		}
+	}
+}
